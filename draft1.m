@@ -1,4 +1,4 @@
-[y, Fs] = audioread("C:\Users\Dell\OneDrive\Desktop\Post1.wav");
+[y, Fs] = audioread("Path of the file");
 
 % Define the cutoff frequency for the high-pass filters
 highpass_cutoff = 300; % Cutoff frequency in Hz
@@ -19,6 +19,7 @@ filtered_audio_fir = filter(fir_filter, 1, y);
 filtered_audio_iir = filter(iir_b, iir_a, y);
 
 % Listen to the original and filtered audio signals
+%Change pause value depending on the audio length
 sound(y, Fs); % Play the original audio
 pause(18); % Pause for 5 seconds before playing filtered audio
 sound(filtered_audio_fir, Fs); % Play the filtered audio (FIR)
